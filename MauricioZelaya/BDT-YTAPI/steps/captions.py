@@ -5,7 +5,3 @@ from compare import expect
 def step_impl(context, videoId):
     context.videoId = videoId
     context.payload = fill_payload(context.apiKey, videoId = context.videoId)
-    print(context.payload)
-    print(context.payload)
-
-

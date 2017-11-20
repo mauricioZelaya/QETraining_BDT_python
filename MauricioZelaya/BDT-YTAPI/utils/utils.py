@@ -47,14 +47,18 @@ def requested_method(endpoint, payload, method = "GET", headers = None):
     elif method == 'DELETE':
         return requests.delete(endpoint)
 
-def fill_payload(key, snippet = "snippet", videoId = None):
+def fill_payload(key, snippet = "snippet", videoId = None, q = None):
     """
     This method will fill the payload, if more attributes are required just add it at the end and set the
     initial value as None, for better call to this method set the name and the value in your call.
     :param key: API key for the user.
     :param snippet: required attribute for google API.
     :param videoId: The video Id.
+    :param q: The video string that will be used to make a search
     :return: the payload in dictionary form
     """
-    pay_load = {"part": snippet, "key": key, "videoId": videoId}
+    pay_load = {"part": snippet,
+                "key": key,
+                "videoId": videoId,
+                "q": q}
     return pay_load
