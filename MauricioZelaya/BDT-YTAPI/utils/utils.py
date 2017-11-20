@@ -1,6 +1,6 @@
 import requests
 
-def get_conn(host, root_path, service, method, payload = None):
+def get_conn(host, root_path, service, method, payload= None, headers= None):
     """
     This method will set a connection to the endpoint, service and using the requested method.
     :param host: The host.
@@ -11,7 +11,7 @@ def get_conn(host, root_path, service, method, payload = None):
     """
 
     endpoint = host + root_path + service
-    request = requested_method(endpoint, payload, method)
+    request = requested_method(endpoint, payload, method, headers)
     return request.status_code
 
 
