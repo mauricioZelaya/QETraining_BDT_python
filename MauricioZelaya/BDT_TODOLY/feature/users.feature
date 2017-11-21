@@ -10,5 +10,6 @@ Examples:
     |GET   |/user |.json |200        |
     |GET   |/authentication/isauthenticated|.json|200|
     |GET   |/authentication/token|.json|200|
+    |DELETE|/user/0              |.json|200|
 
 
