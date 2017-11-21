@@ -52,7 +52,7 @@ def requested_method(endpoint, payload=None, method="GET", headers=None, auth=No
     elif method == 'PUT':
         return requests.put(endpoint, payload)
     elif method == 'DELETE':
-        return requests.delete(endpoint)
+        return requests.delete(endpoint, auth=auth)
 
 
 def fill_authorization_basic(user, pass_word):
