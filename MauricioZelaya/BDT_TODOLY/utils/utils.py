@@ -1,6 +1,6 @@
 import requests
 
-def get_conn(host, root_path, service, method, payload= None, headers= None):
+def get_conn(host, root_path, service, format, method = "GET", payload= None, headers= None, auth = None):
     """
     This method will set a connection to the endpoint, service and using the requested method.
     :param host: The host.
@@ -9,11 +9,11 @@ def get_conn(host, root_path, service, method, payload= None, headers= None):
     :param payload: Payload to send.
     :return: the response code
     """
-    endpoint = host + root_path + service
-    request = requested_method(endpoint, payload, method, headers)
+    endpoint = host + root_path + service + format
+    request = requested_method(endpoint, payload, method, headers, auth)
     return request.status_code
 
-def get_response(host, root_path, service, method, payload = None):
+def get_response(host, root_path, service, format, method, payload = None, auth = None):
     """
     This method execute a request and return the request in json format.
     :param host: Host.
@@ -23,13 +23,13 @@ def get_response(host, root_path, service, method, payload = None):
     :param payload: Payload to execute.
     :return: A request in json format.
     """
-    endpoint = host + root_path + service
-    request = requested_method(endpoint, payload, method)
+    endpoint = host + root_path + service + format
+    request = requested_method(endpoint, payload, method, auth)
     request = request.json()
     return request
 
 
-def requested_method(endpoint, payload, method = "GET", headers = None):
+def requested_method(endpoint, payload = None, method = "GET", headers = None, auth = None):
     """
     This method will return the request according the method sent
     :param endpoint: endpoint where we wil send the request
@@ -39,26 +39,18 @@ def requested_method(endpoint, payload, method = "GET", headers = None):
     :return: None
     """
     if method == 'GET':
-        return requests.get(endpoint, payload)
+        return requests.get(endpoint, payload , auth = auth)
     elif method == 'POST':
-        return requests.post(endpoint, payload, headers)
+        return requests.post(endpoint, payload)
     elif method == 'PUT':
         return requests.put(endpoint, payload)
     elif method == 'DELETE':
         return requests.delete(endpoint)
 
-def fill_payload(key, snippet = "snippet", videoId = None, q = None):
-    """
-    This method will fill the payload, if more attributes are required just add it at the end and set the
-    initial value as None, for better call to this method set the name and the value in your call.
-    :param key: API key for the user.
-    :param snippet: required attribute for google API.
-    :param videoId: The video Id.
-    :param q: The video string that will be used to make a search
-    :return: the payload in dictionary form
-    """
-    pay_load = {"part": snippet,
-                "key": key,
-                "videoId": videoId,
-                "q": q}
-    return pay_load
+def fill_payload(format):
+
+    return True
+
+def fill_authorization_basic(user, pass_word):
+    authorization = (user, pass_word)
+    return authorization
