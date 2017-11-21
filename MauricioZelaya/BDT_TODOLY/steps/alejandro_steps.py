@@ -15,7 +15,7 @@ def step_impl(context, format):
 
 @then(u'I get the {code:d} response to validate')
 def step_impl(context, code):
-    authorization = fill_authorization_basic(context.__ALEJANDRO_USER, context.__ALEJANDRO_PASS)
+    authorization = fill_authorization_basic(context.__ALEJANDRO_USER__, context.__ALEJANDRO_PASS__)
     expect(code).to_equal(get_conn(context.host, context.rootpath,
                                            context.service, context.format, context.method, auth = authorization))
 

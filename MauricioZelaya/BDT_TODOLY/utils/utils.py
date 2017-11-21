@@ -7,6 +7,7 @@ def get_conn(host, root_path, service, format, method = "GET", payload= None, he
     :param root_path: The root_path.
     :param service: The method that will be tested.
     :param payload: Payload to send.
+    :param auth: The authorization credentials.
     :return: the response code
     """
     endpoint = host + root_path + service + format
@@ -21,6 +22,7 @@ def get_response(host, root_path, service, format, method, payload = None, auth 
     :param service: Service will be tested.
     :param method: Method will be used.
     :param payload: Payload to execute.
+    :param auth: The authorization credentials.
     :return: A request in json format.
     """
     endpoint = host + root_path + service + format
@@ -36,6 +38,7 @@ def requested_method(endpoint, payload = None, method = "GET", headers = None, a
     :param payload: parameters required in the request
     :param method: method selected to perform the request
     :param headers: any additional header
+    :param auth: The authorization credentials.
     :return: None
     """
     if method == 'GET':
