@@ -1,6 +1,6 @@
 @users
 Feature:
-  @smoke
+  @smoke_test
   Scenario Outline:
     When I send a <method> request to <service> with <format> format
     Then I get status code <status_code>
