@@ -49,6 +49,7 @@ def get_response(endpoint, method, payload=None, auth=None):
     :return: A request in json format.
     """
     request = connect_to_api(endpoint, method="GET", payload=None, headers=None, auth=None)
+    print(auth)
     return request.json()
 
 
@@ -78,10 +79,14 @@ def fill_authorization_basic(user, pass_word):
 
 
 def serialyze_json(fromJson, data):
-    newJson={}
-    for row in fromJson:
-        if row.item()[0] == "Email":
-            newJson.append(row.item()[0], data)
-
-    return newJson
+    # print(fromJson.type)
+    # for row in fromJson:
+    #     print(row)
+    # datastore = json.loads(fromJson)
+    # newJson={}
+    # for row in datastore:
+    #     if row.item()[0] == "Email":
+    #         newJson.append(row.item()[0], data)
+    #
+    return True
 

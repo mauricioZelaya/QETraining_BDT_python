@@ -40,9 +40,10 @@ def step_impl(context, code):
 @then(u'I compare result')
 def step_impl(context):
    # context.text = text
-    response = get_response(context.endpoint, context.method, auth=context.auth)
-    print(response)
+    context.response = get_response(context.endpoint, context.method, auth=context.auth)
+    print("test")
+    print(context.response)
     newJson = serialyze_json(response, 'zelaya.mauricio@gmail.com')
-    print(newJson)
+    # print(newJson)
     #expect(response).to_equal(context.text)
 

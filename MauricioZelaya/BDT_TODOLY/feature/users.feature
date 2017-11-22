@@ -7,16 +7,16 @@ Feature:
     Then I get status code <status_code>
 
     Examples:
-      | method | service                         | status_code |
-      | GET    | /user                           | 200         |
-      | GET    | /authentication/isauthenticated | 200         |
-      | GET    | /authentication/token           | 200         |
-#      | DELETE | /user/0                         | 200         |
+      | method | service                        | status_code |
+      | GET    | user                           | 200         |
+      | GET    | authentication/isauthenticated | 200         |
+      | GET    | authentication/token           | 200         |
+#      | DELETE | user/0                         | 200         |
 
   @crud_test
   Scenario:
     Given .json format for the response
-    When I GET the /user service method to request user information
+    When I GET the user service method to request user information
     Then I receive status code 200
     And I compare result
   """
