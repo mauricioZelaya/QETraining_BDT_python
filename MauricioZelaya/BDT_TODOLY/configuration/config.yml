@@ -1,8 +1,8 @@
 # This OAuth 2.0 access scope allows for full read/write access to the
 # authenticated user's account.
 APP:
-  ENDPOINT: https://todo.ly/
-  TODO_API_ROOTPATH: api/
+  ENDPOINT: https://todo.ly
+  TODO_API_ROOTPATH: api
 
 
 USERS:

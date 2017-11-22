@@ -1,6 +1,12 @@
 import requests
 
 
+def create_endpoint(*args):
+    endpoint = ''
+    for arg in args:
+        endpoint = endpoint + str(arg) + "/"
+    return endpoint
+
 def get_conn(host, root_path, service, format, method="GET", payload=None, headers=None, auth=None):
     """
     This method will set a connection to the endpoint, service and using the requested method.
