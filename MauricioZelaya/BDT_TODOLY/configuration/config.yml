@@ -12,7 +12,11 @@ USERS:
   __ALEJANDRO_USER__: alejandro.av84@gmail.com
   __ALEJANDRO_PASS__: bddPython
 
-  USER_PABLO: PabloZ
-  API__KEY_PABLO: AIzaSyBmBrstL4QTqAfEY7mTIrK17OrBVJuvxVQ
+  __PABLO_USER__: pablo_zo@hotmail.com
+  __PABLO_PASS__: tdg001
+
+  __DENNIS_USER__: llgamboll@gmail.com
+  __DENNIS_PASS__: P4ssw0rd
+
   USER_DANEIVA: Daneiva
-  API__KEY_DANEIVA: AIzaSyAdbQ1hnwmA4wTTvHsS_HD1zrWceryrQeM
+API__KEY_DANEIVA: AIzaSyAdbQ1hnwmA4wTTvHsS_HD1zrWceryrQeM
