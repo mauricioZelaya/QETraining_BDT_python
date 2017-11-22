@@ -1,4 +1,5 @@
 import yaml
+from utils.utils import *
 
 global generic_data
 generic_data = yaml.load(open('../configuration/config.yml'))
@@ -14,6 +15,7 @@ def before_feature(context, feature):
         context.__MAURICIO_USER__ = generic_data['USERS']['__MAURICIO_USER__']
         context.__MAURICIO_PASS__ = generic_data['USERS']['__MAURICIO_PASS__']
         print(context.__MAURICIO_USER__)
+        context.auth = fill_authorization_basic(context.__MAURICIO_USER__, context.__MAURICIO_PASS__)
 
     elif 'videos' in feature.tags:
         context.user = generic_data['USERS']['USER_DENNIS']
