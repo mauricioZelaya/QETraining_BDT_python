@@ -3,6 +3,11 @@ import json
 
 
 def create_endpoint(*args):
+    """
+    This method will create a url as endpoint with many inputs.
+    :param args: Arguments that will be included in the URL.
+    :return: A URL as string.
+    """
     endpoint = ''
     for arg in args:
         endpoint = endpoint + str(arg) + "/"
@@ -10,22 +15,19 @@ def create_endpoint(*args):
     endpoint = endpoint + ".json"
     return endpoint
 
+def is_item_in_the_response(key, itemId, jsonResponse):
+    """
+    This method return true or false if the item is in the json response.
+    :param itemId: The item that will be search.
+    :param jsonResponse: The response in json format.
+    :return: True or False
+    """
+    for item in jsonResponse:
+        print(jsonResponse[item])
+        if jsonResponse[item] == itemId:
+            return True
+    return False
 
-def connect_to_api(endpoint, method="GET", payload=None, headers=None, auth=None):
-    """
-    method to get the connection from the API
-    :param host: host to connect
-    :param root_path: path to the api
-    :param service: service to be requested
-    :param format: format of the response xml or json
-    :param method: method to be invoked GET, POST, PUT, DELETE
-    :param payload: payload to send
-    :param headers: additional headers if required
-    :param auth: The authorization credentials
-    :return: connection response to requested method
-    """
-    # endpoint = host + root_path + service + format
-    return requested_method(endpoint, payload, method, headers, auth)
 
 def get_conn(endpoint, method="GET", payload=None, headers=None, auth=None):
     """
@@ -35,7 +37,7 @@ def get_conn(endpoint, method="GET", payload=None, headers=None, auth=None):
     :param auth: The authorization credentials.
     :return: the response code
     """
-    request = connect_to_api(endpoint, method="GET", payload=None, headers=None, auth=None)
+    request = requested_method(endpoint, method=method, payload=payload, headers=headers, auth=auth)
     return request.status_code
 
 
@@ -48,7 +50,8 @@ def get_response(endpoint, method, payload=None, auth=None):
     :param auth: The authorization credentials.
     :return: A request in json format.
     """
-    request = connect_to_api(endpoint, method="GET", payload=None, headers=None, auth=None)
+
+    request = requested_method(endpoint, method=method, payload=payload, auth=auth)
     return request.json()
 
 
@@ -71,9 +74,18 @@ def requested_method(endpoint, payload=None, method="GET", headers=None, auth=No
         return requests.put(endpoint, payload)
     elif method == 'DELETE':
         return requests.delete(endpoint, auth=auth)
+    else:
+        #log and error here on debugger declaring that no method was found
+        pass
 
 
 def fill_authorization_basic(user, pass_word):
+    """
+    This method fill the authorization for basic security
+    :param user: The user nickname or mail.
+    :param pass_word: The password of the user.
+    :return: A tuple with the credentials.
+    """
     return user, pass_word
 
 

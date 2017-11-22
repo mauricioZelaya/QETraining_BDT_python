@@ -16,6 +16,15 @@ def step_impl(context, itemId):
 
 @then(u'I get the {code:d} response to validate')
 def step_impl(context, code):
-    authorization = fill_authorization_basic(context.__ALEJANDRO_USER__, context.__ALEJANDRO_PASS__)
-    expect(code).to_equal(get_conn(context.endpoint, context.method, auth = authorization))
+    context.authorization = fill_authorization_basic(context.__ALEJANDRO_USER__, context.__ALEJANDRO_PASS__)
+    expect(code).to_equal(get_conn(context.endpoint, context.method, auth = context.authorization))
+
+
+@then('I verify the {itemKey} in the response')
+def step_impl(context, itemKey):
+    context.itemKey = itemKey
+    context.response = get_response(context.endpoint, context.method, auth = context.authorization)
+    expect(True).to_equal(is_item_in_the_response(context.itemKey, context.itemId, context.response))
+
+
 
