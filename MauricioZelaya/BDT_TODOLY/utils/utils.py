@@ -1,5 +1,22 @@
 import requests
+import json
 
+
+def connect_to_api(host, root_path, service, format, method="GET", payload=None, headers=None, auth=None):
+    """
+    method to get the connection from the API
+    :param host: host to connect
+    :param root_path: path to the api
+    :param service: service to be requested
+    :param format: format of the response xml or json
+    :param method: method to be invoked GET, POST, PUT, DELETE
+    :param payload: payload to send
+    :param headers: additional headers if required
+    :param auth: The authorization credentials
+    :return: connection response to requested method
+    """
+    endpoint = host + root_path + service + format
+    return requested_method(endpoint, payload, method, headers, auth)
 
 def get_conn(host, root_path, service, format, method="GET", payload=None, headers=None, auth=None):
     """
@@ -12,8 +29,7 @@ def get_conn(host, root_path, service, format, method="GET", payload=None, heade
     :param auth: The authorization credentials.
     :return: the response code
     """
-    endpoint = host + root_path + service + format
-    request = requested_method(endpoint, payload, method, headers, auth)
+    request = connect_to_api(host, root_path, service, format, method="GET", payload=None, headers=None, auth=None)
     return request.status_code
 
 
@@ -29,10 +45,8 @@ def get_response(host, root_path, service, format, method, payload=None, auth=No
     :param auth: The authorization credentials.
     :return: A request in json format.
     """
-    endpoint = host + root_path + service + format
-    request = requested_method(endpoint, payload, method, auth)
-    request = request.json()
-    return request
+    request = connect_to_api(host, root_path, service, format, method="GET", payload=None, headers=None, auth=None)
+    return request.json()
 
 
 def requested_method(endpoint, payload=None, method="GET", headers=None, auth=None):
@@ -57,3 +71,13 @@ def requested_method(endpoint, payload=None, method="GET", headers=None, auth=No
 
 def fill_authorization_basic(user, pass_word):
     return user, pass_word
+
+
+def serialyze_json(fromJson, data):
+    newJson={}
+    for row in fromJson:
+        if row.item()[0] == "Email":
+            newJson.append(row.item()[0], data)
+
+    return newJson
+
