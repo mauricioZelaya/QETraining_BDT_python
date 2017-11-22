@@ -6,21 +6,23 @@ generic_data = yaml.load(open('../configuration/config.yml'))
 
 def before_all(context):
     context.host = generic_data['APP']['ENDPOINT']
-    context.rootpath = generic_data['APP']['YOUTUBE_API_ROOTPATH']
+    context.rootpath = generic_data['APP']['TODO_API_ROOTPATH']
 
 
 def before_feature(context, feature):
-    if 'comments' in feature.tags or 'commentThreads' in feature.tags:
-        context.user = generic_data['USERS']['USER_MAURICIO']
-        context.apiKey = generic_data['USERS']['API_KEY_MAURICIO']
+    if 'users' in feature.tags:
+        context.__MAURICIO_USER__ = generic_data['USERS']['__MAURICIO_USER__']
+        context.__MAURICIO_PASS__ = generic_data['USERS']['__MAURICIO_PASS__']
+        print(context.__MAURICIO_USER__)
 
     elif 'videos' in feature.tags:
         context.user = generic_data['USERS']['USER_DENNIS']
         context.apiKey = generic_data['USERS']['API_KEY_DENNIS']
 
-    elif ('search' in feature.tags) or ('captions' in feature.tags):
-        context.user = generic_data['USERS']['USER_ALEJANDRO']
-        context.apiKey = generic_data['USERS']['API_KEY_ALEJANDRO']
+    elif "alejandro" in feature.tags:
+        context.__ALEJANDRO_USER__ = generic_data['USERS']['__ALEJANDRO_USER__']
+        context.__ALEJANDRO_PASS__ = generic_data['USERS']['__ALEJANDRO_PASS__']
+
 
     elif 'playlist' in feature.tags:
         context.user = generic_data['USERS']['USER_PABLO']

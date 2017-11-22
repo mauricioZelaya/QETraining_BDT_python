@@ -6,10 +6,12 @@ APP:
 
 
 USERS:
-  USER_MAURICIO: ramadantis
-  API_KEY_MAURICIO: AIzaSyAdbQ1hnwmA4wTTvHsS_HD1zrWceryrQeM
-  USER_ALEJANDRO: slevin
-  API_KEY_ALEJANDRO: AIzaSyCcuxtUYUAnquyWP_oDYeC9J4wucaD_PWo
+  __MAURICIO_USER__: zelaya.mauricio@gmail.com
+  __MAURICIO_PASS__: Control1234_
+
+  __ALEJANDRO_USER__: alejandro.av84@gmail.com
+  __ALEJANDRO_PASS__: bddPython
+
   USER_DENNIS: Kalulas
   API__KEY_DENNIS: AIzaSyA6uebn-2eWq6_jQT8KEbRDix5zKmto9K8
   USER_PABLO: PabloZ
