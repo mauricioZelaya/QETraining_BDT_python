@@ -2,7 +2,7 @@
 # authenticated user's account.
 APP:
   ENDPOINT: https://todo.ly/
-  TODO_API_ROOTPATH: api/
+  TODO_API_ROOTPATH: api
 
 
 USERS:

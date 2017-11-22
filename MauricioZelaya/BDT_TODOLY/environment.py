@@ -1,4 +1,5 @@
 import yaml
+from utils.utils import *
 
 global generic_data
 generic_data = yaml.load(open('../configuration/config.yml'))
@@ -7,6 +8,7 @@ generic_data = yaml.load(open('../configuration/config.yml'))
 def before_all(context):
     context.host = generic_data['APP']['ENDPOINT']
     context.rootpath = generic_data['APP']['TODO_API_ROOTPATH']
+    context.endpoint = context.host + context.rootpath
 
 
 def before_feature(context, feature):
@@ -14,6 +16,7 @@ def before_feature(context, feature):
         context.__MAURICIO_USER__ = generic_data['USERS']['__MAURICIO_USER__']
         context.__MAURICIO_PASS__ = generic_data['USERS']['__MAURICIO_PASS__']
         print(context.__MAURICIO_USER__)
+        context.auth = fill_authorization_basic(context.__MAURICIO_USER__, context.__MAURICIO_PASS__)
 
     elif 'items' in feature.tags:
         context.__DENNIS_USER__ = generic_data['USERS']['__DENNIS_USER__']
