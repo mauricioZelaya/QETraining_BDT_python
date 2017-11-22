@@ -7,6 +7,7 @@ generic_data = yaml.load(open('../configuration/config.yml'))
 def before_all(context):
     context.host = generic_data['APP']['ENDPOINT']
     context.rootpath = generic_data['APP']['TODO_API_ROOTPATH']
+    context.endpoint = context.host + context.rootpath
 
 
 def before_feature(context, feature):

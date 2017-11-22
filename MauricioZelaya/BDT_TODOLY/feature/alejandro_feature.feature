@@ -6,11 +6,9 @@ Feature: This feature will evaluate CURD for item for the services create, get a
     Given I get a <service>
     When I also get a <method> to validate
     And I get an <itemId> to search
-    And I get a <format> that I want for the response to validate
     Then I get the <code> response to validate
 
     Examples:
-      | service | method | itemId | code | format |
-      | items  | GET    | 123  | 200  | .json  |
-
+      | service | method | itemId | code |
+      | items  | GET    | 123  | 200  |
 
