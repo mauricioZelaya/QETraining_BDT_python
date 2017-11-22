@@ -13,6 +13,7 @@ Feature:
       | GET    | /authentication/token           | 200         |
 #      | DELETE | /user/0                         | 200         |
 
+
   @crud_test
   Scenario:
     Given .json format for the response
