@@ -2,11 +2,11 @@ from utils.utils import *
 from compare import expect
 
 
-@when(u'I send a {method} request to {service} with {format} format')
-def step_impl(context, method, service, format):
+@when(u'I send a {method} request to {service}')
+def step_impl(context, method, service):
     context.method = method
     context.service = service
-    context.format = format
+    context.endpoint = create_endpoint(context.endpoint, context.service)
 
 
 @then(u'I get status code {code}')
@@ -15,7 +15,7 @@ def step_impl(context, code):
         auth = fill_authorization_basic('mago_astaroth@hotmail.com', '1234_')
     else:
         auth = context.auth
-    statusCodeReceived = get_conn(context.host, context.rootpath, context.service, context.format, context.method, auth=auth)
+    statusCodeReceived = get_conn(context.endpoint, context.method, auth=auth)
     expect(statusCodeReceived).to_equal(int(code))
 
 
@@ -28,18 +28,19 @@ def step_impl(context, format):
 def step_impl(context, method, service):
     context.method = method
     context.service = service
+    context.endpoint = create_endpoint(context.endpoint, context.service)
 
 
 @then(u'I receive status code {code}')
 def step_impl(context, code):
-    expect(get_conn(context.host, context.rootpath, context.service, context.format, context.method, auth=context.auth)).to_equal(int(code))
+    expect(get_conn(context.endpoint, context.method, auth=context.auth)).to_equal(int(code))
 
 
 
 @then(u'I compare result')
 def step_impl(context):
    # context.text = text
-    response = get_response(context.host, context.rootpath, context.service, context.format, context.method, auth=context.auth)
+    response = get_response(context.endpoint, context.method, auth=context.auth)
     print(response)
     newJson = serialyze_json(response, 'zelaya.mauricio@gmail.com')
     print(newJson)
