@@ -38,7 +38,9 @@ Feature: This feature will evaluate CURD for item for the services create, get a
     Then I get the <code> response to validate
     And I verify that the parameter has change in the response
 
-    Examples:
-      | itemId   | method | parameter | value | code | service |
-      | 10047753 | PUT    | Priority  | 1     | 200  | items   |
+    Examples:_
+      | itemId   | method | parameter | value      | code | service |
+      | 10047753 | PUT    | Priority  | 100        | 200  | items   |
+      | 10047754 | PUT    | Checked   | true       | 200  | items   |
+      | 10047754 | PUT    | Notes     | "new note" | 200  | items   |
 
