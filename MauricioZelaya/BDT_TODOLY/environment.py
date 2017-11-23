@@ -26,11 +26,8 @@ def before_feature(context, feature):
         context.__ALEJANDRO_USER__ = generic_data['USERS']['__ALEJANDRO_USER__']
         context.__ALEJANDRO_PASS__ = generic_data['USERS']['__ALEJANDRO_PASS__']
 
+    elif "projects" in feature.tags:
+        context.__DAN_USER__= generic_data['USERS']['__DAN_USER__']
+        context.__DAN_PASS__ = generic_data['USERS']['__DAN_PASS__']
 
-    elif 'playlist' in feature.tags:
-        context.user = generic_data['USERS']['USER_PABLO']
-        context.apiKey = generic_data['USERS']['API_KEY_PABLO']
-        
-    elif 'playlist_item' in feature.tags:
-        context.user = generic_data['USERS']['USER_DANEIVA']
-        context.apiKey = generic_data['USERS']['API_KEY_DANEIVA']
+
