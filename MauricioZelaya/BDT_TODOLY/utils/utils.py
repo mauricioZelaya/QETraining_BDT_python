@@ -70,7 +70,7 @@ def requested_method(endpoint, payload=None, method="GET", headers=None, auth=No
     if method == 'GET':
         return requests.get(endpoint, payload, auth=auth)
     elif method == 'POST':
-        return requests.post(endpoint, payload, headers)
+        return requests.post(endpoint, json=payload, auth=auth)
     elif method == 'PUT':
         return requests.put(endpoint, json=payload, auth=auth)
     elif method == 'DELETE':

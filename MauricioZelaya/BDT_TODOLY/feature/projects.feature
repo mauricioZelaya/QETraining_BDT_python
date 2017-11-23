@@ -13,7 +13,7 @@ Feature: This feature is to test the implementation of the projects management f
 
 
   @crud_test
-  @acceptance
+  @acceptance_1
     #CREATE
   Scenario Outline: Confirm that a project can be added
     When I <method> the following body in <format> format to add the project with name <name>:
