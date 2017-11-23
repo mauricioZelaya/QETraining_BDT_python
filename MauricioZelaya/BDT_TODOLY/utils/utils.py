@@ -23,16 +23,15 @@ def is_item_in_the_response(key, value, jsonResponse):
     :return: True or False
     """
     for item in jsonResponse:
-        value_t = value_type(jsonResponse[item])
-        if value_t == "int":
+        if type(jsonResponse[item]) == int:
             if item == key and jsonResponse[item] == int(value):
                 return True
 
-        if value_t == "str":
+        if type(jsonResponse[item]) == str:
             if item == key and jsonResponse[item] == str(value):
                 return True
 
-        if value_t == "bool":
+        if type(jsonResponse[item]) == bool:
             if item == key and jsonResponse[item] == bool(value):
                 return True
         else:
@@ -40,21 +39,6 @@ def is_item_in_the_response(key, value, jsonResponse):
             pass
     return False
 
-def value_type(value):
-    """
-    This method will determine a type of value that is send.
-    :param value: The value that will be tested.
-    :return: The type of the value in a string
-    """
-    if type(value) == int:
-        return "int"
-    if type(value) == str:
-        return "str"
-    if type(value) == bool:
-        return "bool"
-    else:
-        #log an error
-        pass
 
 
 def get_conn(endpoint, method="GET", json_data=None, headers=None, auth=None):
