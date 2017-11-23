@@ -22,22 +22,23 @@ def is_item_in_the_response(key, value, jsonResponse):
     :param jsonResponse: The response in json format.
     :return: True or False
     """
+    flag = False
     for item in jsonResponse:
         if type(jsonResponse[item]) == int:
             if item == key and jsonResponse[item] == int(value):
-                return True
+                flag = True
 
         if type(jsonResponse[item]) == str:
             if item == key and jsonResponse[item] == str(value):
-                return True
+                flag = True
 
         if type(jsonResponse[item]) == bool:
             if item == key and jsonResponse[item] == bool(value):
-                return True
+                flag = True
         else:
             #log and error
             pass
-    return False
+    return flag
 
 
 

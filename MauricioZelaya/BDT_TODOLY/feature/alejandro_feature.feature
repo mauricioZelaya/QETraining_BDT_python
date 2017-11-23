@@ -44,3 +44,18 @@ Feature: This feature will evaluate CURD for item for the services create, get a
       | 10047754 | PUT    | Checked   | true       | 200  | items   |
       | 10047754 | PUT    | Notes     | "new note" | 200  | items   |
 
+  @acceptance_test_post
+  Scenario Outline: I want to create new items into a defined project
+    Given I get an <projectId> to modify
+    And I get a <service>
+    And I get a <parameter> to modify
+    And I also get a <value> to modify
+    When I make the <method> request
+    Then I get the <code> response to validate
+    And I verify that the parameter has change in the response
+
+    Examples:_
+      | itemId   | method | parameter | value      | code | service |
+      | 10047753 | PUT    | Priority  | 100        | 200  | items   |
+      | 10047754 | PUT    | Checked   | true       | 200  | items   |
+      | 10047754 | PUT    | Notes     | "new note" | 200  | items   |
