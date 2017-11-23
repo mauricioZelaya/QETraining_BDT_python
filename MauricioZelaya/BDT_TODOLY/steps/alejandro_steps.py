@@ -25,7 +25,7 @@ def step_impl(context, method):
 
 @then('I verify that the item is created in the response')
 def step_impl(context):
-    pass
+    expect(int).to_equal(type(context.response["Id"]))
 
 
 
@@ -59,9 +59,7 @@ def step_impl(context):
 
 
 
-
 ######## _GET TESTS_ #######
-
 
 @given(u'I get a {service}')
 def step_impl(context, service):
