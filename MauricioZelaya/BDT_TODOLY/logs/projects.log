@@ -1,0 +1,6 @@
+INFO:root:------------endpoint---------------
+INFO:root:https://todo.ly/api/projects.json
+INFO:root:----------------payload-----------
+INFO:root:{'Content': 'project1'}
+INFO:root:----------------project-----------
+INFO:root:<Response [200]>
