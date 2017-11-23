@@ -2,6 +2,8 @@ import requests
 import json
 
 
+
+
 def create_endpoint(*args):
     """
     This method will create a url as endpoint with many inputs.
@@ -50,7 +52,6 @@ def get_response(endpoint, method, payload=None, auth=None):
     :param auth: The authorization credentials.
     :return: A request in json format.
     """
-
     request = requested_method(endpoint, method=method, payload=payload, auth=auth)
     return request.json()
 
@@ -71,7 +72,7 @@ def requested_method(endpoint, payload=None, method="GET", headers=None, auth=No
     elif method == 'POST':
         return requests.post(endpoint, payload, headers)
     elif method == 'PUT':
-        return requests.put(endpoint, payload)
+        return requests.put(endpoint, json=payload, auth=auth)
     elif method == 'DELETE':
         return requests.delete(endpoint, auth=auth)
     else:
@@ -87,13 +88,4 @@ def fill_authorization_basic(user, pass_word):
     :return: A tuple with the credentials.
     """
     return user, pass_word
-
-
-def serialyze_json(fromJson, data):
-    newJson={}
-    for row in fromJson:
-        if row.item()[0] == "Email":
-            newJson.append(row.item()[0], data)
-
-    return newJson
 
