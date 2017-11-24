@@ -44,9 +44,9 @@ Feature: This feature is to test the implementation of the projects management f
       }
       """
     Then I get project code result <status_code>
-    And the project with the new icon updated.
+    And the project with the new icon <iconId> updated.
 
     Examples:
-      | ID            | iconId | format | status_code |
-      | <id_obtained> | 4    | .json  |         200 |
+      | method | iconId | format | status_code |
+      | PUT    | 5      | .json  | 200         |
      # | 9900000 | .json  | 400         |

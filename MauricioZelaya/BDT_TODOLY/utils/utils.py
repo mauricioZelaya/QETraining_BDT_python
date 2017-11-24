@@ -25,7 +25,6 @@ def is_item_in_the_response(key, itemId, jsonResponse):
     :return: True or False
     """
     for item in jsonResponse:
-        print(jsonResponse[item])
         if jsonResponse[item] == itemId:
             return True
     return False
@@ -98,7 +97,6 @@ def is_project_in_the_response(projectComponent, response):
     :return: True or False
     """
     for project in response:
-        print(response[project])
         if response[project] == projectComponent:
             return True
     return False

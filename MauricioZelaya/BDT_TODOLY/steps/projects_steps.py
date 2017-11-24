@@ -31,33 +31,53 @@ def step_impl(context, method, name, format):
     context.format = format
 
     context.endpoint = create_endpoint(context.endpoint, context.service)
-    logging.info(time.strftime("%c")+ ' -  Endpoint created:'+ context.endpoint)
+    logging.info(time.strftime("%c")+ ' - 3 - Endpoint created:'+ context.endpoint)
 
     context.response = get_response(context.endpoint, context.method, context.payload, context.auth)
-    logging.info(time.strftime("%c")+ ' -  The following project: '+  context.projectName + " is added successfully.")
-
-@then(u'I get project code result {code:d}')
-def step_impl(context,code):
-    context.auth = fill_authorization_basic(context.__DAN_USER__, context.__DAN_PASS__)
-    expect(int(code)).to_equal(get_conn(context.endpoint, context.method,context.auth))
+    logging.info(time.strftime("%c")+ ' - 3 - The following project: '+  context.projectName + " name is added successfully.")
 
 @then(u'the project with {name} is added.')
 def step_impl(context, name):
     context.name = name
-    print("IDRESPONSE:", context.response['Id'])
-    varId= context.response['Id']
-    print(context.name)
+    projectId= context.response['Id']
+
     isProjectByName= is_project_in_the_response( name, context.response)
-    IsProjectById=is_project_in_the_response( varId, context.response)
-    print(isProjectByName, "***********************")
-    print(IsProjectById, "***********************")
+    isProjectById= is_project_in_the_response( projectId, context.response)
+
     expect(True).to_equal(isProjectByName)
-    expect(True).to_equal(IsProjectById)
+    logging.info(time.strftime("%c") + ' - 4 - Verification 1 project By Name: is ' + str(isProjectByName))
+    expect(True).to_equal(isProjectById)
+    logging.info(time.strftime("%c") + ' - 5 - Verification 2 Project By Id: is ' + str(isProjectById))
 
-@when(u'I <method> the following body in .json format to update the project with icon: 4')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When I <method> the following body in .json format to update the project with icon: 4')
+@when(u'I {method} the following body in {format} format to update the project with icon: {iconId}')
 
-@then(u'the project with the new icon updated.')
+def step_impl(context, iconId, method, format):
+
+    context.authorization = fill_authorization_basic(context.__DAN_USER__, context.__DAN_PASS__)
+    context.service = "projects"
+
+    enpointUpdate = create_endpoint(context.endpoint, context.service)
+    context.response = get_response(enpointUpdate, "POST", {"Content": "project0"}, context.authorization)
+    projectId = context.response['Id']
+
+    enpointUpdate2 = create_endpoint(context.endpoint, context.service+"/"+str(projectId))
+    context.payload = {"Content": "My updated project","Icon": iconId}
+    context.method = method
+    context.response = get_response(enpointUpdate2, context.method,context.payload, context.authorization)
+
+    isProjectById = is_project_in_the_response(projectId, context.response)
+
+    expect(True).to_equal(isProjectById)
+    logging.info(time.strftime("%c") + ' - 6 -  Project updated By Id: is ' + str(isProjectById))
+
+@then(u'the project with the new icon {iconId} updated.')
+def step_impl(context,iconId):
+    context.iconId = iconId
+
+    expect(context.payload['Icon']).to_equal(context.payload['Icon'])
+    logging.info(time.strftime("%c") + ' - 7 - Verification Porject updated')
+
+
+@then(u'I get project code result 200')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then the project with the new icon updated.')
+    pass
