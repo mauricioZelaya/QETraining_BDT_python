@@ -1,0 +1,23 @@
+# This OAuth 2.0 access scope allows for full read/write access to the
+# authenticated user's account.
+APP:
+  ENDPOINT: https://todo.ly/
+  TODO_API_ROOTPATH: api
+
+
+USERS:
+  __MAURICIO_USER__: zelaya.mauricio@gmail.com
+  __MAURICIO_PASS__: Control1234_
+
+  __ALEJANDRO_USER__: alejandro.av84@gmail.com
+  __ALEJANDRO_PASS__: bddPython
+
+  __PABLO_USER__: pablo_zo@hotmail.com
+  __PABLO_PASS__: Tdg001
+
+  __DENNIS_USER__: llgamboll@gmail.com
+  __DENNIS_PASS__: P4ssw0rd
+
+  __DAN_USER__: daneiva@gmail.com
+  __DAN_PASS__: d.1000
+

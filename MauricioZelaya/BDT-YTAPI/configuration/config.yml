@@ -1,0 +1,18 @@
+# This OAuth 2.0 access scope allows for full read/write access to the
+# authenticated user's account.
+APP:
+  ENDPOINT: https://www.googleapis.com/
+  YOUTUBE_API_ROOTPATH: youtube/v3
+
+
+USERS:
+  USER_MAURICIO: ramadantis
+  API_KEY_MAURICIO: AIzaSyAdbQ1hnwmA4wTTvHsS_HD1zrWceryrQeM
+  USER_ALEJANDRO: slevin
+  API_KEY_ALEJANDRO: AIzaSyCcuxtUYUAnquyWP_oDYeC9J4wucaD_PWo
+  USER_DENNIS: Kalulas
+  API__KEY_DENNIS: AIzaSyA6uebn-2eWq6_jQT8KEbRDix5zKmto9K8
+  USER_PABLO: PabloZ
+  API__KEY_PABLO: AIzaSyBmBrstL4QTqAfEY7mTIrK17OrBVJuvxVQ
+  USER_DANEIVA: Daneiva
+  API__KEY_DANEIVA: AIzaSyAdbQ1hnwmA4wTTvHsS_HD1zrWceryrQeM

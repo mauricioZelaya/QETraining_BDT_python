@@ -1,0 +1,62 @@
+INFO:root:Fri Nov 24 02:47:13 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 02:47:14 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 02:47:14 2017 - 3 - Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Fri Nov 24 02:47:14 2017 - 3 - The following project: project1 name is added successfully.
+INFO:root:Fri Nov 24 02:47:14 2017 - 4 - Verification 1 project By Name: is True
+INFO:root:Fri Nov 24 02:47:14 2017 - 5 - Verification 2 Project By Id: is True
+INFO:root:Fri Nov 24 02:47:16 2017 - 6 -  Project updated By Id: is True
+INFO:root:Fri Nov 24 02:47:16 2017 - 7 - Verification Porject updated
+INFO:root:Fri Nov 24 02:48:39 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 02:48:40 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 02:48:40 2017 - 3 - Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Fri Nov 24 02:48:41 2017 - 3 - The following project: project1 name is added successfully.
+INFO:root:Fri Nov 24 02:48:41 2017 - 4 - Verification 1 project By Name: is True
+INFO:root:Fri Nov 24 02:48:41 2017 - 5 - Verification 2 Project By Id: is True
+INFO:root:Fri Nov 24 02:48:42 2017 - 6 -  Project updated By Id: is True
+INFO:root:Fri Nov 24 02:48:42 2017 - 7 - Verification Porject updated
+INFO:root:Fri Nov 24 02:49:58 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 02:49:59 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 02:49:59 2017 - 3 - Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Fri Nov 24 02:49:59 2017 - 3 - The following project: project1 name is added successfully.
+INFO:root:Fri Nov 24 02:49:59 2017 - 4 - Verification 1 project By Name: is True
+INFO:root:Fri Nov 24 02:49:59 2017 - 5 - Verification 2 Project By Id: is True
+INFO:root:Fri Nov 24 02:50:01 2017 - 6 -  Project updated By Id: is True
+INFO:root:Fri Nov 24 02:50:01 2017 - 7 - Verification Porject updated
+INFO:root:Fri Nov 24 09:50:22 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 09:50:23 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 09:50:23 2017 - 3 - Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Fri Nov 24 09:50:24 2017 - 3 - The following project: project1 name is added successfully.
+INFO:root:Fri Nov 24 09:50:24 2017 - 4 - Verification 1 project By Name: is True
+INFO:root:Fri Nov 24 09:50:24 2017 - 5 - Verification 2 Project By Id: is True
+INFO:root:Fri Nov 24 09:50:26 2017 - 6 -  Project updated By Id: is True
+INFO:root:Fri Nov 24 09:50:26 2017 - 7 - Verification Porject updated
+INFO:root:Fri Nov 24 09:56:25 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 09:56:26 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 09:57:16 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 09:57:17 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 09:57:35 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 09:57:36 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 09:58:47 2017 - 1 -  Method sent:'GET'
+INFO:root:None
+INFO:root:Fri Nov 24 09:58:47 2017 - 2 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Fri Nov 24 10:01:52 2017 - 3 - Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Fri Nov 24 10:01:52 2017 - 3 - The following project: project1 name is added successfully.
+INFO:root:Fri Nov 24 10:01:52 2017 - 4 - Verification 1 project By Name: is True
+INFO:root:Fri Nov 24 10:01:52 2017 - 5 - Verification 2 Project By Id: is True
+INFO:root:Fri Nov 24 10:01:54 2017 - 6 -  Project updated By Id: is True
+INFO:root:Fri Nov 24 10:01:54 2017 - 7 - Verification Porject updated
