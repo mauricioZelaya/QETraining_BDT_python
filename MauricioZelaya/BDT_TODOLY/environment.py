@@ -27,5 +27,7 @@ def before_feature(context, feature):
         context.__ALEJANDRO_PASS__ = generic_data['USERS']['__ALEJANDRO_PASS__']
 
     elif "projects" in feature.tags:
-        context.__DAN_USER__ = generic_data['USERS']['__DAN_USER__']
+        context.__DAN_USER__= generic_data['USERS']['__DAN_USER__']
         context.__DAN_PASS__ = generic_data['USERS']['__DAN_PASS__']
+
+

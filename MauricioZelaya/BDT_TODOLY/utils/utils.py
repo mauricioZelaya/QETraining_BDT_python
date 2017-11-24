@@ -41,7 +41,6 @@ def is_item_in_the_response(key, value, jsonResponse):
     return flag
 
 
-
 def get_conn(endpoint, method="GET", json_data=None, headers=None, auth=None):
     """
     This method will set a connection to the endpoint, service and using the requested method.
@@ -99,3 +98,17 @@ def fill_authorization_basic(user, pass_word):
     :return: A tuple with the credentials.
     """
     return user, pass_word
+
+
+def is_project_in_the_response(projectComponent, response):
+    """
+    This method return true or false if the name project is in the json response.
+    :param projectComponent: The project component that will be search.
+    :param response: The response.
+    :return: True or False
+    """
+    for project in response:
+        if response[project] == projectComponent:
+            return True
+    return False
+
