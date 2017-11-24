@@ -21,3 +21,7 @@ AUTHENTICATION ------ Mauricio
 
 
 https://gist.github.com/jelcaf/1404619
+
+documentation:
+https://pypi.python.org/pypi/allure-behave
+https://docs.qameta.io/allure/2.0/
