@@ -11,7 +11,7 @@ def step_impl(context, method, service, format):
     context.method = method
     context.service = service
     context.format = format
-    logging.info(logging.info(time.strftime("%c")+ ' - Method:'+ repr(context.method)))
+    logging.info(logging.info(time.strftime("%c")+ ' - 1 -  Method sent:'+ repr(context.method)))
 
 @then(u'I should get the project status code {status_code}')
 def step_impl(context, status_code):
@@ -19,7 +19,7 @@ def step_impl(context, status_code):
     context.endpoint = create_endpoint(context.endpoint, context.service)
     context.authorization = fill_authorization_basic(context.__DAN_USER__, context.__DAN_PASS__)
     expect(int(status_code)).to_equal(get_conn(context.endpoint, context.method, auth = context.authorization))
-    logging.info(logging.info(time.strftime("%c")+ ' - Status code obtained:'+ repr(context.status_code)))
+    logging.info(logging.info(time.strftime("%c")+ ' - 2 - Status code obtained:'+ repr(context.status_code)))
 
 @when(u'I {method} the following body in {format} format to add the project with name {name}')
 def step_impl(context, method, name, format):
@@ -53,3 +53,11 @@ def step_impl(context, name):
     print(IsProjectById, "***********************")
     expect(True).to_equal(isProjectByName)
     expect(True).to_equal(IsProjectById)
+
+@when(u'I <method> the following body in .json format to update the project with icon: 4')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When I <method> the following body in .json format to update the project with icon: 4')
+
+@then(u'the project with the new icon updated.')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the project with the new icon updated.')

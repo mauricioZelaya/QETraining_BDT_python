@@ -30,25 +30,23 @@ Feature: This feature is to test the implementation of the projects management f
       | POST   | project1 | .json  | 200         |
      # | none       | .json  | 400         |
 
-#////////////////////
-
   @crud_test
   @acceptance
     #MODIFY
   Scenario Outline: Confirm that a project can be updated
-    When I post the following body in <format> format to update the project with ID <ID>:
+    When I <method> the following body in <format> format to update the project with icon: <iconId>:
   """
       {
           "ProjectObject": {
-              "Content": "ProjectNameModified1",
-              "Icon": "4"
+              "Content": "Project1",
+              "Icon": "<iconId>"
           }
       }
       """
     Then I get project code result <status_code>
-    And the edited project with the new data.
+    And the project with the new icon updated.
 
     Examples:
-      | ID      | format | status_code |
-      | 3354231 | .json  | 200         |
+      | ID            | iconId | format | status_code |
+      | <id_obtained> | 4    | .json  |         200 |
      # | 9900000 | .json  | 400         |

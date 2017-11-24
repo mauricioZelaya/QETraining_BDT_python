@@ -14,3 +14,15 @@ INFO:root:Thu Nov 23 23:14:26 2017 - Status code obtained:'200'
 INFO:root:None
 INFO:root:Thu Nov 23 23:14:26 2017 -  Endpoint created:https://todo.ly/api/projects.json
 INFO:root:Thu Nov 23 23:14:27 2017 -  The following project: project1 is added successfully.
+INFO:root:Thu Nov 23 23:34:36 2017 - Method:'GET'
+INFO:root:None
+INFO:root:Thu Nov 23 23:34:37 2017 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Thu Nov 23 23:34:37 2017 -  Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Thu Nov 23 23:34:38 2017 -  The following project: project1 is added successfully.
+INFO:root:Thu Nov 23 23:54:18 2017 - Method:'GET'
+INFO:root:None
+INFO:root:Thu Nov 23 23:54:20 2017 - Status code obtained:'200'
+INFO:root:None
+INFO:root:Thu Nov 23 23:54:20 2017 -  Endpoint created:https://todo.ly/api/projects.json
+INFO:root:Thu Nov 23 23:54:20 2017 -  The following project: project1 is added successfully.
