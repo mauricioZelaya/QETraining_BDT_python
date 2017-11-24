@@ -13,7 +13,7 @@ Feature: This feature will evaluate CURD for item for the services create, get a
       | items   | GET    | 10047753 | 200  |
 
 
-  @acceptance_test
+  @acceptance_test @crud_test
   Scenario Outline: I want to verify that I get the items associated to my account
     Given I get a <service>
     When I also get a <method> to validate
@@ -28,7 +28,7 @@ Feature: This feature will evaluate CURD for item for the services create, get a
       | items   | GET    | 100      | Id      | 400  |
       | items   | GET    | 10047753 | Id      | 200  |
 
-  @acceptance_test_put
+  @acceptance_test_put @crud_test
   Scenario Outline: given an item I want to verify that an item can be edited and verify the new parameters are correct
     Given I get an <itemId> to modify
     And I get a <service>
@@ -44,7 +44,7 @@ Feature: This feature will evaluate CURD for item for the services create, get a
       | 10047754 | PUT    | Checked   | true       | 200  | items   |
       | 10047754 | PUT    | Notes     | "new note" | 200  | items   |
 
-  @acceptance_test_post
+  @acceptance_test_post @crud_test
   Scenario Outline: I want to create new items into a defined project
     Given And I get a json body <json> with the body that will be send
     And I get a <service>

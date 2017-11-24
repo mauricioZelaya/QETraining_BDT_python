@@ -111,3 +111,4 @@ def is_project_in_the_response(projectComponent, response):
         if response[project] == projectComponent:
             return True
     return False
+
