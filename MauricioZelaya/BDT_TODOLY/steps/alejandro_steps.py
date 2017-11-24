@@ -20,13 +20,13 @@ def step_impl(context, method):
     context.method =  method
     context.authorization = fill_authorization_basic(context.__ALEJANDRO_USER__, context.__ALEJANDRO_PASS__)
     context.endpoint = create_endpoint(context.endpoint, context.service, str(context.itemId))
-    context.payload = {context.parameter: context.value}
-    context.response = get_response(context.endpoint, context.method, context.payload, context.authorization)
+    context.jsonData = {context.parameter: context.value}
+    context.response = get_response(context.endpoint, context.method, context.jsonData, context.authorization)
 
 
 @then('I verify that the parameter has change in the response')
 def step_impl(context):
-    expect(True).to_equal(is_item_in_the_response(context.parameter, context.itemId, context.response))
+    expect(True).to_equal(is_item_in_the_response(context.parameter, context.value, context.response))
 
 
 
