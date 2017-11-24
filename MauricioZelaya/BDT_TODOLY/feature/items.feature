@@ -11,6 +11,7 @@ Feature: This will test the Items method feature for the API in todo
       | SERVICE | METHOD | CODE |
       | items   | GET    | 200  |
 
+  @smoke_test
   Scenario Outline: I want to perform delete of a item
     Given A <SERVICE> and a <METHOD>
     When I select a <ID> of the item
@@ -20,6 +21,7 @@ Feature: This will test the Items method feature for the API in todo
       | SERVICE | METHOD | ID   | CODE |
       | items   | DELETE | 1033 | 200  |
 
+  @smoke_test
   Scenario Outline: I want to perform Returns the root parent item for the given item Id and
   the Done items. Use RootItem method for unchecked items and DoneRootItem for done items.
 
@@ -33,7 +35,7 @@ Feature: This will test the Items method feature for the API in todo
       | items   | GET    | 1033 | DoneRootItem | 200  |
 
 
-  @acceptance_test
+  @acceptance_test @crud_test
   Scenario Outline: I want to verify that I delete the items associated to my account
     Given A <SERVICE> and a <METHOD>
     When I select a <ID> of the item
@@ -46,6 +48,7 @@ Feature: This will test the Items method feature for the API in todo
       #| items   | DELETE | 600      | 200  | Id     |
       #| items   | DELETE | 400      | 200  | Id     |
 
+  @crud_test
   Scenario Outline: I want to perform Returns the root parent item for the given item Id and
   the Done items. Use RootItem method for unchecked items and DoneRootItem for done items.
 
