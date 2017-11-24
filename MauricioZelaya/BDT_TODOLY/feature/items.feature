@@ -43,6 +43,8 @@ Feature: This will test the Items method feature for the API in todo
     Examples:
       | SERVICE | METHOD | ID       | CODE | ITEMID |
       | items   | DELETE | 10049780 | 200  | Id     |
+      #| items   | DELETE | 600      | 200  | Id     |
+      #| items   | DELETE | 400      | 200  | Id     |
 
   Scenario Outline: I want to perform Returns the root parent item for the given item Id and
   the Done items. Use RootItem method for unchecked items and DoneRootItem for done items.
@@ -55,4 +57,8 @@ Feature: This will test the Items method feature for the API in todo
     Examples:
       | SERVICE | METHOD | ID       | ROOT         | CODE | ITEMID |
       | items   | GET    | 10049805 | RootItem     | 200  | Id     |
+      | items   | GET    | 0000     | RootItem     | 200  | Id     |
+      | items   | GET    | 789456   | RootItem     | 200  | Id     |
       | items   | GET    | 10049808 | DoneRootItem | 200  | Id     |
+      | items   | GET    | 400      | DoneRootItem | 200  | Id     |
+      | items   | GET    | 0561     | DoneRootItem | 200  | Id     |
