@@ -89,3 +89,16 @@ def fill_authorization_basic(user, pass_word):
     """
     return user, pass_word
 
+
+def is_project_in_the_response(name, Response):
+    """
+    This method return true or false if the name project is in the json response.
+    :param projectId: The project that will be search.
+    :param jsonResponse: The response in json format.
+    :return: True or False
+    """
+    for project in Response:
+        print(Response[project])
+        if Response[project] == name:
+            return True
+    return False
